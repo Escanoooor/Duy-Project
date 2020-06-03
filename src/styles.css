@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0 auto;
+}
+
+input.ng-touched.ng-invalid {
+    border-color: red;
+}
+
+div.validation-error {
+    font-size: 80%;
+    color: red;
+}
+
+table.table-hover tbody tr:hover {
+    cursor: pointer;
+}
