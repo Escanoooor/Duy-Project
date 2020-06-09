@@ -21,6 +21,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import{PageService} from './shared/page.service';
 import{FormsModule} from "@angular/forms"
 import { from } from 'rxjs';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { from } from 'rxjs';
     MainpageComponent,
     PageComponent,
     PageListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
