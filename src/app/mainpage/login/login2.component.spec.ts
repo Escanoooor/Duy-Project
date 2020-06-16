@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageListComponent } from './page-list.component';
+import { Login2Component } from './login2.component';
 
-describe('PageListComponent', () => {
-  let component: PageListComponent;
-  let fixture: ComponentFixture<PageListComponent>;
+describe('Login2Component', () => {
+  let component: Login2Component;
+  let fixture: ComponentFixture<Login2Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageListComponent ]
+      declarations: [ Login2Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageListComponent);
+    fixture = TestBed.createComponent(Login2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

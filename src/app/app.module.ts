@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { PageComponent } from './mainpage/page/page.component';
-import { PageListComponent } from './mainpage/login/page-list.component';
+import {RegisterComponent} from './mainpage/register/register.component';
 
 //ngx-toastr for Angular
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,17 +22,18 @@ import{PageService} from './shared/page.service';
 import{FormsModule} from "@angular/forms"
 import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
+import { Login2Component } from './mainpage/login2/login2.component';
 
-import{Router} from '@angular/router';
-
+//import{Router} from '@angular/router';
+//import { AuthService } from './auth.service';
 @NgModule({
   declarations: [
     AppComponent,
     MainpageComponent,
     PageComponent,
-    PageListComponent,
     HomeComponent,
-   
+    RegisterComponent,
+    Login2Component
   ],
   imports: [
     BrowserModule,
