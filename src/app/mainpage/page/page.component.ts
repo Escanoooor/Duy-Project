@@ -27,7 +27,7 @@ export class PageComponent implements OnInit {
       Price: '',
     }
   }
-  // Add new
+  // Add new and update
   onSubmit(form: NgForm){
     let data = Object.assign({},form.value) ;
     delete data.id;

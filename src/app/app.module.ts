@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { PageComponent } from './mainpage/page/page.component';
-import { PageListComponent } from './mainpage/page-list/page-list.component';
+import { PageListComponent } from './mainpage/login/page-list.component';
 
 //ngx-toastr for Angular
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +23,8 @@ import{FormsModule} from "@angular/forms"
 import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 
+import{Router} from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { HomeComponent } from './home/home.component';
     PageComponent,
     PageListComponent,
     HomeComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { HomeComponent } from './home/home.component';
       FormsModule,
       BrowserAnimationsModule,
       ToastrModule.forRoot(),
-      MatSliderModule
+      MatSliderModule,
+ //Router
   ],
   providers: [PageService],
   bootstrap: [AppComponent]
