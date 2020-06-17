@@ -6,12 +6,14 @@ import { Login2Component } from './login2.component';
 
 import { RegisterComponent } from '../register/register.component';
 
-
+import{ReactiveFormsModule} from '@angular/forms'
+import { from } from 'rxjs';
 @NgModule({
   declarations: [Login2Component,RegisterComponent],
   imports: [
     CommonModule,
-    Login2RoutingModule
+    Login2RoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class Login2Module { }

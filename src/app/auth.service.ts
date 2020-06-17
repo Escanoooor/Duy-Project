@@ -1,27 +1,61 @@
 import { Injectable } from "@angular/core";
+import{auth} from 'firebase/app'
+import{User} from 'firebase'
+import{first} from 'rxjs/operators'
+import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
+import { from } from 'rxjs';
 
-		import { AngularFireAuth } from '@angular/fire/auth';
-		import * as firebase from 'firebase/app';
-		import { Router } from '@angular/router';
+@Injectable()
+export class AuthService {
+			public user:User; 
 
-		@Injectable()
-		export class AuthService {
+constructor(public AfAuth:AngularFireAuth
+){}
 
-		  constructor(
-		   public afAuth: AngularFireAuth,
-		   public router:Router
-		 ){}
+async login(email:string,password:string){
+	try{
+		const result = await this.AfAuth.signInWithEmailAndPassword(
+			email,password
+		);
+		return result;
+	}
+	
+	catch(error)
+	{
+		console.log(error);
+	}	
+}
 
+async register(email:string,password:string){
+	try{
+		const result = await this.AfAuth.createUserWithEmailAndPassword(
+			email,
+			password
+		);
+		return result;
+	}
+	
+	catch(error)
+	{
+		console.log(error);
+	}	
+}
+async logout(){
+	
+	try{
+		await this.AfAuth.signOut();
+	}
+	catch(error)
+	{
+		console.log(error);
+		
+	}
+}
+GetCurrentUser(){
+	return this.AfAuth.authState.pipe(first()).toPromise();
+}
 
-		 async signinGmail(){
-			var provider = new firebase.auth.GoogleAuthProvider();
-			provider.addScope('profile');
-			provider.addScope('email');
-			return await  this.afAuth.signInWithPopup(provider)
-              .then(res=>{
-                console.log(" da dang nhap thanh cong")
-				//  this.router.navigate(['home']);
-                // this.router.navigate(['home']);
-				})
-    }
-  }
+		 
+}

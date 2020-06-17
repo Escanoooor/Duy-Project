@@ -3,23 +3,23 @@
         <div class="card">
             <div class="card-body">
                 <h1>REGISTER</h1>
-                <form>
+                <form [formGroup]="RegisterForm" (ngSubmit)="onRegister()">
                     <h4>Email</h4>
                     <div class="input-group mb-3">
 
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Enter your email" aria-label="Email" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Enter your email" formControlName="email" aria-label="Email" aria-describedby="basic-addon1">
                     </div>
                     <h4>Password</h4>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text " id="basic-addon1"> <i class="fa fa-key" aria-hidden="true"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Enter your password" aria-label="Password" aria-describedby="basic-addon1">
+                        <input type="password" class="form-control" placeholder="Enter your password" formControlName="password" aria-label="Password" aria-describedby="basic-addon1">
                     </div>
-                    <button class="btn btn-primary btn-lg btn-block">REGISTER</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">REGISTER</button>
                 </form>
             </div>
         </div>

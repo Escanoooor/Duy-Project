@@ -20,10 +20,12 @@ import { MatSliderModule } from '@angular/material/slider';
 //
 import{PageService} from './shared/page.service';
 import{FormsModule} from "@angular/forms"
+import{ReactiveFormsModule} from "@angular/forms"
 import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
-import { Login2Component } from './mainpage/login2/login2.component';
+import { Login2Component } from './mainpage/login/login2.component';
 
+//import{MatSortModule} from '@angular/material/sort'
 //import{Router} from '@angular/router';
 //import { AuthService } from './auth.service';
 @NgModule({
@@ -46,6 +48,7 @@ import { Login2Component } from './mainpage/login2/login2.component';
       BrowserAnimationsModule,
       ToastrModule.forRoot(),
       MatSliderModule,
+      ReactiveFormsModule,
  //Router
   ],
   providers: [PageService],
