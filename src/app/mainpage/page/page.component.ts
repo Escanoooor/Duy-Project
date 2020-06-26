@@ -21,10 +21,12 @@ export class PageComponent implements OnInit {
     form.resetForm();
     this.service.formData={
       id: null,
+      Key:'',
       Name: '',
       Kind: '',
       Release: '',
       Price: '',
+      Status:'',
     }
   }
   // Add new and update

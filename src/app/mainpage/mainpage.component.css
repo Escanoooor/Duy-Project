@@ -1,0 +1,6 @@
+.fa-bullseye:before {
+    border: 5px solid;
+    color: #f8f9fc;
+    content: "\f140";
+    border-radius: 100%;
+}

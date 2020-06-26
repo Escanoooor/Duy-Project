@@ -4,4 +4,6 @@ export class Page {
     Kind: string;
     Release: string;
     Price: string;
+    Key:string;
+    Status:string;
 }

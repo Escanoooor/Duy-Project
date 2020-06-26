@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 //Firebase module cô Ngôn hướng dẫn
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -7,10 +7,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
     
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MainpageComponent } from './mainpage/mainpage.component';
-import { PageComponent } from './mainpage/page/page.component';
-import {RegisterComponent} from './mainpage/register/register.component';
+import{Routes,RouterModule} from '@angular/router'
 
 //ngx-toastr for Angular
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,8 +19,19 @@ import{PageService} from './shared/page.service';
 import{FormsModule} from "@angular/forms"
 import{ReactiveFormsModule} from "@angular/forms"
 import { from } from 'rxjs';
+import { AppComponent } from './app.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { PageComponent } from './mainpage/page/page.component';
+import {RegisterComponent} from './mainpage/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { Login2Component } from './mainpage/login/login2.component';
+import { ProductComponent } from './mainpage/product/product.component';
+
+// const appRoutes: Routes =[
+//   {path:'home',component:HomeComponent},
+//   {path:'login',component:Login2Component}
+// ];
+  
 
 //import{MatSortModule} from '@angular/material/sort'
 //import{Router} from '@angular/router';
@@ -35,7 +43,8 @@ import { Login2Component } from './mainpage/login/login2.component';
     PageComponent,
     HomeComponent,
     RegisterComponent,
-    Login2Component
+    Login2Component,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +58,7 @@ import { Login2Component } from './mainpage/login/login2.component';
       ToastrModule.forRoot(),
       MatSliderModule,
       ReactiveFormsModule,
+      // RouterModule.forRoot(appRoutes),
  //Router
   ],
   providers: [PageService],

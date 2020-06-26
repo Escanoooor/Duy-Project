@@ -6,12 +6,14 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { async } from '@angular/core/testing';
 
 @Injectable()
 export class AuthService {
 			public user:User; 
 
-constructor(public AfAuth:AngularFireAuth
+constructor(public AfAuth:AngularFireAuth, public db:AngularFirestore
 ){}
 
 async login(email:string,password:string){
@@ -28,7 +30,7 @@ async login(email:string,password:string){
 	}	
 }
 
-async register(email:string,password:string){
+async register(email?:string,password?:string){
 	try{
 		const result = await this.AfAuth.createUserWithEmailAndPassword(
 			email,
@@ -53,9 +55,28 @@ async logout(){
 		
 	}
 }
-GetCurrentUser(){
-	return this.AfAuth.authState.pipe(first()).toPromise();
+getCurrentUser(){
+  return new Promise<any>((resolve,reject)=>{
+	  var user = this.AfAuth.onAuthStateChanged(function(user){
+		  if(user){
+			  resolve(user);
+		  }
+		  else reject ("No login");
+	  })
+  }
+  )
+}
+async LoginwithGG(){
+	try{
+		let provider = new firebase.auth.GoogleAuthProvider();
+		let user = this.AfAuth.signInWithPopup(provider);
+		console.log(user);
+		(await user).user.displayName;
+	}
+	catch(error)
+	{
+		console.log(error);
+	}
+}
 }
 
-		 
-}

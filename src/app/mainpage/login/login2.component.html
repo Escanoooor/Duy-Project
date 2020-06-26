@@ -31,7 +31,7 @@
                                     <button type="submit" class="btn btn-primary btn-user btn-block" (ngSubmit)="onLogin()"> Login </button>
 
                                     <hr>
-                                    <button type="button" class="btn btn-danger btn-block">Login with Google</button>
+                                    <button type="button" class="btn btn-danger btn-block" (click)="onLoginwithGoogle()" style="border-radius: 10em;">Login with Google</button>
 
 
                                     <a href="index.html " class="btn btn-facebook btn-user btn-block ">
@@ -40,10 +40,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center ">
-                                    <a class="small " href="forgot-password.html ">Forgot Password?</a>
-                                </div>
-                                <div class="text-center ">
-                                    <a class="small " [routerLink]="['/register']">Create an Account!</a>
+                                    <a class="small " href="forgot-password.html "> Did you Forget your Password?</a>
                                 </div>
                             </div>
                         </div>
