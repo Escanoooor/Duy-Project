@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "fir-firebase-9d0bd"
+    "default": "fir-firebase-9d0bd",
+    "y": "fir-firebase-9d0bd"
   }
 }

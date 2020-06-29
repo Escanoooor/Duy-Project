@@ -1,10 +1,10 @@
 {
-  "hosting": {
-    "public": "./dist/DEMO-NA1",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+    "hosting": {
+        "public": "./dist/DEMO-NA1",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }
 }
