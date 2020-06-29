@@ -14,7 +14,7 @@ export class MainpageComponent implements OnInit {
   Startnumber =0;
   Endnumber = 5 ;
   list: Page[];
-  firstname: string;
+  // firstname: string;
   kindstyle:string;
   constructor(public service: PageService,
     public firestore: AngularFirestore,
@@ -44,15 +44,18 @@ export class MainpageComponent implements OnInit {
     }
   }
   //Status
-  getColor(color) { 
-    switch (color) {
-      case 'Enough':
-        return 'green';
-      case 'Warning':
-        return 'darkgoldenrod';
-      case 'Empty':
-        return 'red';
-    }
+  getNumber(number) { 
+   if(number >= 15)
+   {
+     return "green";
+   }
+   else if(number >=5 && number <= 15)
+   {
+     return "darkgoldenrod"
+   }
+   else {
+     return "red"
+   }
   }
   //Paginator
 
@@ -67,16 +70,16 @@ export class MainpageComponent implements OnInit {
   }
   // Search by name
   Search(){
-    if(this.firstname !="" || this.kindstyle !="") // fixing
+    if(this.kindstyle !="") // fixing
     {
-      if(this.firstname != "")
+      if(this.kindstyle!= "")
       {
         this.list = this.list.filter(res=>{
-          return res.Name.toLocaleLowerCase().match(this.firstname.toLocaleLowerCase());
+          return res.Kind.toLocaleLowerCase().match(this.kindstyle.toLocaleLowerCase());
          });
       }
     }
-    else if (this.firstname =="" || this.kindstyle == "")
+    else if ( this.kindstyle == "")
     {
       this.ngOnInit();
     }  

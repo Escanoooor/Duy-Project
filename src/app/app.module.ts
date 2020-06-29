@@ -26,7 +26,7 @@ import {RegisterComponent} from './mainpage/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { Login2Component } from './mainpage/login/login2.component';
 import { ProductComponent } from './mainpage/product/product.component';
-
+import { CountUpModule } from 'ngx-countup';
 // const appRoutes: Routes =[
 //   {path:'home',component:HomeComponent},
 //   {path:'login',component:Login2Component}
@@ -58,6 +58,8 @@ import { ProductComponent } from './mainpage/product/product.component';
       ToastrModule.forRoot(),
       MatSliderModule,
       ReactiveFormsModule,
+      CountUpModule
+
       // RouterModule.forRoot(appRoutes),
  //Router
   ],

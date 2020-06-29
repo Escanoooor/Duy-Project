@@ -22,11 +22,12 @@ export class PageComponent implements OnInit {
     this.service.formData={
       id: null,
       Key:'',
-      Name: '',
+      Sex: '',
       Kind: '',
       Release: '',
       Price: '',
       Status:'',
+      SL:'',
     }
   }
   // Add new and update

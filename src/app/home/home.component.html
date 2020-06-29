@@ -27,7 +27,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="margin: 0 auto;">
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -46,7 +46,7 @@
 
                             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                                 <div class="sidebar-brand-icon rotate-n-15">
-                                    <span class="flaticon-nintendo-1"></span>Nintendo Shop
+                                    <span class="fas fa-cat"></span>Pet Shop
                                 </div>
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,7 +106,9 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 counter"> 3500 <i class="fas fa-male"></i></div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 counter">
+                                            <h1 [countUp]='3800' [options]='{duration:5}'></h1> <i class="fas fa-male"></i>
+                                        </div>
 
                                     </div>
                                     <div class="col-auto">
@@ -124,7 +126,8 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Event Sales (Weekly)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">7</div>
+                                        <h1 [countUp]='25' [options]='{duration:7}'></h1>
+                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
@@ -143,7 +146,10 @@
                                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Profit</div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
-                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">>60%</div>
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                    <h1 [countUp]='60' [options]='{duration:7}'></h1>
+                                                    <i class="fas fa-money-bill-wave    "></i>
+                                                </div>
                                             </div>
                                             <div class="col">
                                                 <div class="progress progress-sm mr-2">
@@ -167,7 +173,12 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Comment</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">1800</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <h1 [countUp]='1500' [options]='{duration:5}'></h1>
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+                                        <!-- <h1 [countUp]='countTo!=null?countTo:0' [options]='{duration:2}'> </h1>
+                                        <button class="btn btn-primary" (click)="doSomethingOnComplete()"> Click me</button> -->
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-comments fa-2x text-gray-300"></i>

@@ -69,9 +69,7 @@ getCurrentUser(){
 async LoginwithGG(){
 	try{
 		let provider = new firebase.auth.GoogleAuthProvider();
-		let user = this.AfAuth.signInWithPopup(provider);
-		console.log(user);
-		(await user).user.displayName;
+		let user = await this.AfAuth.signInWithPopup(provider);
 	}
 	catch(error)
 	{
